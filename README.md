@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cs421_Assignment4
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -27,3 +28,6 @@ npm run dev
 ```sh
 npm run build
 ```
+=======
+# cs421Assignment4
+>>>>>>> 2805d4aea71bbb7de1ed25c6a0b4dd0afe7c56df
