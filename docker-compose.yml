@@ -1,0 +1,59 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: school
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - appnet
+
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - appnet
+
+  frontend1:
+    build: ./vue-frontend
+    container_name: frontend1
+    networks:
+      - appnet
+
+  frontend2:
+    build: ./vue-frontend
+    container_name: frontend2
+    networks:
+      - appnet
+
+  frontend3:
+    build: ./vue-frontend
+    container_name: frontend3
+    networks:
+      - appnet
+
+  loadbalancer:
+    image: nginx:latest
+    container_name: lb
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx-load-balancer/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend1
+      - frontend2
+      - frontend3
+    networks:
+      - appnet
+
+volumes:
+  db_data:
+
+networks:
+  appnet:
