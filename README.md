@@ -1,33 +1,7 @@
 <<<<<<< HEAD
 # cs421_Assignment4
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
 ## Building and Running the Front-End Containers
 
 1. Clone the Repository
@@ -47,8 +21,10 @@ docker-compose up -d
 4 Verify Deployment
 Open your browser and go to http://<your-ec2-public-ip>. You should see the Vue.js front-end with the node identifier displayed
 
-##Load Balancer Setup
+## Load Balancer Setup
+
  Round-Robin Algorithm
+ 
 The NGINX load balancer is configured using a round-robin strategy to distribute traffic evenly across three Vue.js front-end containers:
 ```sh
 upstream frontend_nodes {
@@ -58,7 +34,8 @@ upstream frontend_nodes {
 }
 
 ```
- ###Health Checks
+ ## Health Checks
+ 
 NGINX uses passive health checks based on response status codes. If a container is down (e.g., connection refused), it will be temporarily skipped until it becomes responsive again.
 
 ## AWS Deployment Guide
@@ -81,7 +58,10 @@ docker-compose up -d
 ```
 4.Access the App
 
+```sh
 Visit http://<your-ec2-public-ip> in your browser.
+```
+
 
 ## Troubleshooting Tips
 1.Front-end not loading
