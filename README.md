@@ -1,6 +1,11 @@
-<<<<<<< HEAD
+
 # cs421_Assignment4
 
+-Docker Hub URLs: https://hub.docker.com/u/riziki2000
+
+-GitHub Repository URL: https://github.com/samanda-787/cs421Assignment4
+
+-Publicly Accessible URL Front-End :http://ec2-56-228-42-29.eu-north-1.compute.amazonaws.com/
 
 ## Building and Running the Front-End Containers
 
