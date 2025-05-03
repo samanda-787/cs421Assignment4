@@ -28,6 +28,4 @@ npm run dev
 ```sh
 npm run build
 ```
-=======
-# cs421Assignment4
->>>>>>> 2805d4aea71bbb7de1ed25c6a0b4dd0afe7c56df
+
